@@ -1,0 +1,12 @@
+/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/CompilerProject/build/CMakeFiles/intrinsics_gen.dir
+/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/CompilerProject/build/CMakeFiles/vt_gen.dir
+/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/CompilerProject/build/CMakeFiles/omp_gen.dir
+/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/CompilerProject/build/CMakeFiles/acc_gen.dir
+/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/CompilerProject/build/CMakeFiles/target_parser_gen.dir
+/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/CompilerProject/build/CMakeFiles/compiler.dir
+/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/CompilerProject/build/CMakeFiles/edit_cache.dir
+/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/CompilerProject/build/CMakeFiles/rebuild_cache.dir
+/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/CompilerProject/build/CMakeFiles/list_install_components.dir
+/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/CompilerProject/build/CMakeFiles/install.dir
+/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/CompilerProject/build/CMakeFiles/install/local.dir
+/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/CompilerProject/build/CMakeFiles/install/strip.dir

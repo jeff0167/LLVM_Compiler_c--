@@ -1,0 +1,26 @@
+# ninja log v7
+1	34	1790618616919537299	parser.cpp	978d1272fb886eb3
+1	34	1790618616919537299	parser.hpp	978d1272fb886eb3
+1	34	1790618616919537299	/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/CompilerProject/build/parser.cpp	978d1272fb886eb3
+1	34	1790618616919537299	/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/CompilerProject/build/parser.hpp	978d1272fb886eb3
+2	17	1790618485665830078	lexer.cpp	d4b1c5e0635257c4
+2	17	1790618485665830078	/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/CompilerProject/build/lexer.cpp	d4b1c5e0635257c4
+34	258	1790618616920243484	CMakeFiles/compiler.dir/lexer.cpp.o	f303ba4d393fb8fc
+38	277	1790596701531272827	CMakeFiles/compiler.dir/src/AST.cpp.o	fb877e9967bf2dcb
+3	220	1790599845272006182	CMakeFiles/compiler.dir/src/main.cpp.o	a4b98b9f99dba34f
+34	291	1790618616920063460	CMakeFiles/compiler.dir/parser.cpp.o	17df262d4c5e1190
+256	329	1790618485905262238	compiler	154a04db653b6a30
+2	36	1790618634912302066	parser.cpp	978d1272fb886eb3
+2	36	1790618634912302066	parser.hpp	978d1272fb886eb3
+2	36	1790618634912302066	/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/CompilerProject/build/parser.cpp	978d1272fb886eb3
+2	36	1790618634912302066	/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/CompilerProject/build/parser.hpp	978d1272fb886eb3
+36	258	1790618634914022541	CMakeFiles/compiler.dir/lexer.cpp.o	f303ba4d393fb8fc
+36	304	1790618634912302066	CMakeFiles/compiler.dir/parser.cpp.o	17df262d4c5e1190
+1	42	1790618688566316411	parser.cpp	978d1272fb886eb3
+1	42	1790618688566316411	parser.hpp	978d1272fb886eb3
+1	42	1790618688566316411	/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/CompilerProject/build/parser.cpp	978d1272fb886eb3
+1	42	1790618688566316411	/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/CompilerProject/build/parser.hpp	978d1272fb886eb3
+42	268	1790618688566316411	CMakeFiles/compiler.dir/src/main.cpp.o	a4b98b9f99dba34f
+42	273	1790618688568218392	CMakeFiles/compiler.dir/lexer.cpp.o	f303ba4d393fb8fc
+42	311	1790618688568055543	CMakeFiles/compiler.dir/parser.cpp.o	17df262d4c5e1190
+311	383	1790618688835316483	compiler	154a04db653b6a30
