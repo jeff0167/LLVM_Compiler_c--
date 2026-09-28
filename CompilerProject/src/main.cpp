@@ -22,7 +22,7 @@ extern std::unique_ptr<Compiler::Program> parsedProgram;
 // Main
 // ============================================================
 
-int main()
+int main() // LLVM ORC REPL
 {
     //yydebug = 1;
 
