@@ -1,0 +1,14 @@
+Start a terminal in the root of the project folder and then you can run the following commands
+
+
+Initialize project:  cmake -S . -B build -G Ninja
+
+Build:               cmake --build build
+
+Run the REPL:        (cd build && ./compiler)
+
+Build and run REPL:  (cd build && ninja && ./compiler)
+
+
+
+
