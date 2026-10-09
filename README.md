@@ -150,7 +150,3 @@ int main() {
 ## License
 
 This project is for educational purposes.
-
-## Contributing
-
-See `CONTRIBUTING.md` (to be created).
