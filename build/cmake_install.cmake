@@ -1,4 +1,4 @@
-# Install script for directory: /home/socrates/Documents/resources/repository/LLVM_Compiler_c++/CompilerProject
+# Install script for directory: /home/socrates/Documents/resources/repository/LLVM_Compiler_c++
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -49,7 +49,7 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/compiler"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/CompilerProject/build/compiler")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/compiler")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/compiler" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/compiler")
     if(CMAKE_INSTALL_DO_STRIP)
@@ -59,13 +59,13 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  include("/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/CompilerProject/build/CMakeFiles/compiler.dir/install-cxx-module-bmi-noconfig.cmake" OPTIONAL)
+  include("/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/CMakeFiles/compiler.dir/install-cxx-module-bmi-noconfig.cmake" OPTIONAL)
 endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
 if(CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/CompilerProject/build/install_local_manifest.txt"
+  file(WRITE "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/install_local_manifest.txt"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()
 if(CMAKE_INSTALL_COMPONENT)
@@ -81,6 +81,6 @@ else()
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/CompilerProject/build/${CMAKE_INSTALL_MANIFEST}"
+  file(WRITE "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()

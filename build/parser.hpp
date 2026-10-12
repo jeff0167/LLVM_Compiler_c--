@@ -35,8 +35,8 @@
    especially those whose name start with YY_ or yy_.  They are
    private implementation details that can be changed or removed.  */
 
-#ifndef YY_YY_HOME_SOCRATES_DOCUMENTS_RESOURCES_REPOSITORY_LLVM_COMPILER_C_COMPILERPROJECT_BUILD_PARSER_HPP_INCLUDED
-# define YY_YY_HOME_SOCRATES_DOCUMENTS_RESOURCES_REPOSITORY_LLVM_COMPILER_C_COMPILERPROJECT_BUILD_PARSER_HPP_INCLUDED
+#ifndef YY_YY_HOME_SOCRATES_DOCUMENTS_RESOURCES_REPOSITORY_LLVM_COMPILER_C_BUILD_PARSER_HPP_INCLUDED
+# define YY_YY_HOME_SOCRATES_DOCUMENTS_RESOURCES_REPOSITORY_LLVM_COMPILER_C_BUILD_PARSER_HPP_INCLUDED
 /* Debug traces.  */
 #ifndef YYDEBUG
 # define YYDEBUG 0
@@ -45,12 +45,12 @@
 extern int yydebug;
 #endif
 /* "%code requires" blocks.  */
-#line 17 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/CompilerProject/include/parser/parser.y"
+#line 18 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/parser/parser.y"
 
     #include "AST.h"
     #include <memory>
 
-#line 54 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/CompilerProject/build/parser.hpp"
+#line 54 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/parser.hpp"
 
 /* Token kinds.  */
 #ifndef YYTOKENTYPE
@@ -103,7 +103,7 @@ extern int yydebug;
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
 union YYSTYPE
 {
-#line 29 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/CompilerProject/include/parser/parser.y"
+#line 30 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/parser/parser.y"
 
     int number;
     char* string;
@@ -111,7 +111,7 @@ union YYSTYPE
     Compiler::Expression* expression;
     Compiler::Statement* statement;
 
-#line 115 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/CompilerProject/build/parser.hpp"
+#line 115 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/parser.hpp"
 
 };
 typedef union YYSTYPE YYSTYPE;
@@ -126,4 +126,4 @@ extern YYSTYPE yylval;
 int yyparse (void);
 
 
-#endif /* !YY_YY_HOME_SOCRATES_DOCUMENTS_RESOURCES_REPOSITORY_LLVM_COMPILER_C_COMPILERPROJECT_BUILD_PARSER_HPP_INCLUDED  */
+#endif /* !YY_YY_HOME_SOCRATES_DOCUMENTS_RESOURCES_REPOSITORY_LLVM_COMPILER_C_BUILD_PARSER_HPP_INCLUDED  */

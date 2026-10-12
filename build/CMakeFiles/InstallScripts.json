@@ -1,7 +1,7 @@
 {
 	"InstallScripts" : 
 	[
-		"/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/CompilerProject/build/cmake_install.cmake"
+		"/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/cmake_install.cmake"
 	],
 	"Parallel" : false
 }

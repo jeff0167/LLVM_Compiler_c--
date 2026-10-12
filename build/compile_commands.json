@@ -1,0 +1,26 @@
+[
+{
+  "directory": "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build",
+  "command": "/usr/bin/c++ -I/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include -I/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build  -Wall -Wextra -std=gnu++17 -o CMakeFiles/compiler.dir/src/main.cpp.o -c /home/socrates/Documents/resources/repository/LLVM_Compiler_c++/src/main.cpp",
+  "file": "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/src/main.cpp",
+  "output": "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/CMakeFiles/compiler.dir/src/main.cpp.o"
+},
+{
+  "directory": "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build",
+  "command": "/usr/bin/c++ -I/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include -I/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build  -Wall -Wextra -std=gnu++17 -o CMakeFiles/compiler.dir/src/AST.cpp.o -c /home/socrates/Documents/resources/repository/LLVM_Compiler_c++/src/AST.cpp",
+  "file": "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/src/AST.cpp",
+  "output": "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/CMakeFiles/compiler.dir/src/AST.cpp.o"
+},
+{
+  "directory": "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build",
+  "command": "/usr/bin/c++ -I/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include -I/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build  -Wall -Wextra -std=gnu++17 -o CMakeFiles/compiler.dir/parser.cpp.o -c /home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/parser.cpp",
+  "file": "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/parser.cpp",
+  "output": "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/CMakeFiles/compiler.dir/parser.cpp.o"
+},
+{
+  "directory": "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build",
+  "command": "/usr/bin/c++ -I/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include -I/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build  -Wall -Wextra -std=gnu++17 -o CMakeFiles/compiler.dir/lexer.cpp.o -c /home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/lexer.cpp",
+  "file": "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/lexer.cpp",
+  "output": "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/CMakeFiles/compiler.dir/lexer.cpp.o"
+}
+]

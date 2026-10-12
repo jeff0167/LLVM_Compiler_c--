@@ -1,6 +1,6 @@
-#line 1 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/CompilerProject/build/lexer.cpp"
+#line 1 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/lexer.cpp"
 
-#line 3 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/CompilerProject/build/lexer.cpp"
+#line 3 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/lexer.cpp"
 
 #define  YY_INT_ALIGNED short int
 
@@ -463,16 +463,16 @@ int yy_flex_debug = 0;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/CompilerProject/include/lexer/lexer.l"
-#line 2 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/CompilerProject/include/lexer/lexer.l"
+#line 1 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/lexer/lexer.l"
+#line 2 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/lexer/lexer.l"
 #include "parser.hpp"
 
 #include <cstdlib>
 #include <cstring>
 #include <iostream>
-#line 473 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/CompilerProject/build/lexer.cpp"
+#line 473 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/lexer.cpp"
 #define YY_NO_INPUT 1
-#line 475 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/CompilerProject/build/lexer.cpp"
+#line 475 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/lexer.cpp"
 
 #define INITIAL 0
 
@@ -687,10 +687,10 @@ YY_DECL
 		}
 
 	{
-#line 13 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/CompilerProject/include/lexer/lexer.l"
+#line 13 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/lexer/lexer.l"
 
 
-#line 693 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/CompilerProject/build/lexer.cpp"
+#line 693 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/lexer.cpp"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -749,7 +749,7 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 15 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/CompilerProject/include/lexer/lexer.l"
+#line 15 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/lexer/lexer.l"
 {
     /* Ignore spaces, tabs and carriage returns */
 }
@@ -757,7 +757,7 @@ YY_RULE_SETUP
 case 2:
 /* rule 2 can match eol */
 YY_RULE_SETUP
-#line 19 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/CompilerProject/include/lexer/lexer.l"
+#line 19 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/lexer/lexer.l"
 {
     std::cout << "LEXER: END\n";
     return END;
@@ -765,7 +765,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 25 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/CompilerProject/include/lexer/lexer.l"
+#line 25 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/lexer/lexer.l"
 {
     std::cout << "LEXER: NUMBER = " << yytext << "\n";
     yylval.number = std::stoi(yytext);
@@ -774,7 +774,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 32 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/CompilerProject/include/lexer/lexer.l"
+#line 32 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/lexer/lexer.l"
 {
     if (std::strcmp(yytext, "int") == 0)
         return INT;
@@ -797,47 +797,47 @@ YY_RULE_SETUP
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 53 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/CompilerProject/include/lexer/lexer.l"
+#line 53 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/lexer/lexer.l"
 { return PLUS_ASSIGN; }
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 54 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/CompilerProject/include/lexer/lexer.l"
+#line 54 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/lexer/lexer.l"
 { return MINUS_ASSIGN; }
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 55 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/CompilerProject/include/lexer/lexer.l"
+#line 55 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/lexer/lexer.l"
 { return MUL_ASSIGN; }
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 56 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/CompilerProject/include/lexer/lexer.l"
+#line 56 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/lexer/lexer.l"
 { return DIV_ASSIGN; }
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 58 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/CompilerProject/include/lexer/lexer.l"
+#line 58 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/lexer/lexer.l"
 { return EQUALS_EQUALS; }
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 59 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/CompilerProject/include/lexer/lexer.l"
+#line 59 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/lexer/lexer.l"
 { return LESS_EQUALS; }
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 60 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/CompilerProject/include/lexer/lexer.l"
+#line 60 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/lexer/lexer.l"
 { return GREATER_EQUALS; }
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 61 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/CompilerProject/include/lexer/lexer.l"
+#line 61 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/lexer/lexer.l"
 { return ARROW; }
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 63 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/CompilerProject/include/lexer/lexer.l"
+#line 63 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/lexer/lexer.l"
 {
     std::cout << "LEXER: PLUS\n";
     return PLUS;
@@ -845,86 +845,86 @@ YY_RULE_SETUP
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 68 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/CompilerProject/include/lexer/lexer.l"
+#line 68 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/lexer/lexer.l"
 { return MINUS; }
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 69 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/CompilerProject/include/lexer/lexer.l"
+#line 69 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/lexer/lexer.l"
 { return STAR; }
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 70 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/CompilerProject/include/lexer/lexer.l"
+#line 70 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/lexer/lexer.l"
 { return SLASH; }
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 72 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/CompilerProject/include/lexer/lexer.l"
+#line 72 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/lexer/lexer.l"
 { return ASSIGN; }
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 74 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/CompilerProject/include/lexer/lexer.l"
+#line 74 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/lexer/lexer.l"
 { return LESS; }
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 75 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/CompilerProject/include/lexer/lexer.l"
+#line 75 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/lexer/lexer.l"
 { return GREATER; }
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 77 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/CompilerProject/include/lexer/lexer.l"
+#line 77 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/lexer/lexer.l"
 { return SEMICOLON; }
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 78 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/CompilerProject/include/lexer/lexer.l"
+#line 78 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/lexer/lexer.l"
 { return COMMA; }
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 79 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/CompilerProject/include/lexer/lexer.l"
+#line 79 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/lexer/lexer.l"
 { return COLON; }
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 81 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/CompilerProject/include/lexer/lexer.l"
+#line 81 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/lexer/lexer.l"
 { return LPAREN; }
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 82 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/CompilerProject/include/lexer/lexer.l"
+#line 82 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/lexer/lexer.l"
 { return RPAREN; }
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 84 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/CompilerProject/include/lexer/lexer.l"
+#line 84 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/lexer/lexer.l"
 { return LBRACE; }
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 85 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/CompilerProject/include/lexer/lexer.l"
+#line 85 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/lexer/lexer.l"
 { return RBRACE; }
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
-#line 87 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/CompilerProject/include/lexer/lexer.l"
+#line 87 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/lexer/lexer.l"
 { return LBRACKET; }
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
-#line 88 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/CompilerProject/include/lexer/lexer.l"
+#line 88 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/lexer/lexer.l"
 { return RBRACKET; }
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
-#line 90 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/CompilerProject/include/lexer/lexer.l"
+#line 90 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/lexer/lexer.l"
 { return DOT; }
 	YY_BREAK
 case YY_STATE_EOF(INITIAL):
-#line 93 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/CompilerProject/include/lexer/lexer.l"
+#line 93 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/lexer/lexer.l"
 {
     std::cout << "LEXER: EOF\n";
     return 0;
@@ -932,7 +932,7 @@ case YY_STATE_EOF(INITIAL):
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
-#line 99 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/CompilerProject/include/lexer/lexer.l"
+#line 99 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/lexer/lexer.l"
 {
     std::cerr
         << "Unknown character: '"
@@ -942,10 +942,10 @@ YY_RULE_SETUP
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
-#line 106 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/CompilerProject/include/lexer/lexer.l"
+#line 106 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/lexer/lexer.l"
 ECHO;
 	YY_BREAK
-#line 948 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/CompilerProject/build/lexer.cpp"
+#line 948 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/lexer.cpp"
 
 	case YY_END_OF_BUFFER:
 		{
@@ -1911,6 +1911,6 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 106 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/CompilerProject/include/lexer/lexer.l"
+#line 106 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/lexer/lexer.l"
 
 
