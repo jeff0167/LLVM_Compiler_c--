@@ -5,8 +5,9 @@
 #include <string>
 #include <vector>
 
+#include "DataTypes.h"
 
-namespace Compiler
+namespace compiler
 {
 
 // ============================================================
@@ -19,6 +20,11 @@ class ASTNode
         virtual ~ASTNode() = default;
 
         virtual void print(int indent = 0) const = 0;
+
+        compiler::DataType Type;
+        void setType(compiler::DataType t) { Type = t; }
+
+        //virtual int Visit() const = 0; // Visitor pattern
 
     protected:
         static void printIndent(int indent)
@@ -50,9 +56,10 @@ class NumberExpression : public Expression
         }
 
         void print(int indent = 0) const override;
+        //int Visit() const override; // Visitor pattern
 
-    private:
         std::string value;
+    private:
 };
 
 
@@ -70,8 +77,8 @@ class StringExpression : public Expression
 
         void print(int indent = 0) const override;
 
-    private:
         std::string value;
+    private:
 };
 
 
@@ -89,8 +96,8 @@ class IdentifierExpression : public Expression
 
         void print(int indent = 0) const override;
 
-    private:
         std::string name;
+    private:
 };
 
 
@@ -114,10 +121,10 @@ class BinaryExpression : public Expression
 
         void print(int indent = 0) const override;
 
-    private:
         std::unique_ptr<Expression> left;
         std::string operatorSymbol;
         std::unique_ptr<Expression> right;
+    private:
 };
 
 
@@ -137,15 +144,15 @@ class Statement : public ASTNode
 class Program : public ASTNode
 {
     public:
-        void addStatement(std::unique_ptr<Statement> statement)
+        void addNode(std::unique_ptr<ASTNode> node)
         {
-            statements.push_back(std::move(statement));
+            nodes.push_back(std::move(node));
         }
 
         void print(int indent = 0) const override;
 
+        std::vector<std::unique_ptr<ASTNode>> nodes;
     private:
-        std::vector<std::unique_ptr<Statement>> statements;
 };
 
 
@@ -165,8 +172,8 @@ class ExpressionStatement : public Statement
 
         void print(int indent = 0) const override;
 
-    private:
         std::unique_ptr<Expression> expression;
+    private:
 };
 
 
@@ -190,10 +197,10 @@ class VariableDeclaration : public Statement
 
         void print(int indent = 0) const override;
 
-    private:
         std::string type;
         std::string name;
         std::unique_ptr<Expression> initializer;
+    private:
 };
 
 }

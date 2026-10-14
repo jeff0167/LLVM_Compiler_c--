@@ -10,7 +10,7 @@ void yyerror(const char* message);
 /*extern int yydebug;*/   /* deep parser debuging 1*/
 
 
-std::unique_ptr<Compiler::Program> parsedProgram;
+std::unique_ptr<compiler::Program> parsedProgram;
 %}
 
 
@@ -31,8 +31,8 @@ std::unique_ptr<Compiler::Program> parsedProgram;
     int number;
     char* string;
 
-    Compiler::Expression* expression;
-    Compiler::Statement* statement;
+    compiler::Expression* expression;
+    compiler::Statement* statement;
 }
 
 
@@ -132,10 +132,10 @@ input
     :
       statement END
     {
-        parsedProgram = std::make_unique<Compiler::Program>();
+        parsedProgram = std::make_unique<compiler::Program>();
 
-        parsedProgram->addStatement(
-            std::unique_ptr<Compiler::Statement>($1)
+        parsedProgram->addNode(
+            std::unique_ptr<compiler::ASTNode>($1)
         );
     }
 
@@ -143,10 +143,10 @@ input
 
       statement SEMICOLON END
     {
-        parsedProgram = std::make_unique<Compiler::Program>();
+        parsedProgram = std::make_unique<compiler::Program>();
 
-        parsedProgram->addStatement(
-            std::unique_ptr<Compiler::Statement>($1)
+        parsedProgram->addNode(
+            std::unique_ptr<compiler::ASTNode>($1)
         );
     }
     ;
@@ -160,8 +160,8 @@ statement
     :
       expression
     {
-        $$ = new Compiler::ExpressionStatement(
-            std::unique_ptr<Compiler::Expression>($1)
+        $$ = new compiler::ExpressionStatement(
+            std::unique_ptr<compiler::Expression>($1)
         );
     }
 
@@ -178,10 +178,10 @@ variable_declaration
     :
       INT IDENTIFIER ASSIGN expression
     {
-        $$ = new Compiler::VariableDeclaration(
+        $$ = new compiler::VariableDeclaration(
             "int",
             $2,
-            std::unique_ptr<Compiler::Expression>($4)
+            std::unique_ptr<compiler::Expression>($4)
         );
 
         std::free($2);
@@ -191,10 +191,10 @@ variable_declaration
 
       FLOAT IDENTIFIER ASSIGN expression
     {
-        $$ = new Compiler::VariableDeclaration(
+        $$ = new compiler::VariableDeclaration(
             "float",
             $2,
-            std::unique_ptr<Compiler::Expression>($4)
+            std::unique_ptr<compiler::Expression>($4)
         );
 
         std::free($2);
@@ -204,10 +204,10 @@ variable_declaration
 
       CHAR IDENTIFIER ASSIGN expression
     {
-        $$ = new Compiler::VariableDeclaration(
+        $$ = new compiler::VariableDeclaration(
             "char",
             $2,
-            std::unique_ptr<Compiler::Expression>($4)
+            std::unique_ptr<compiler::Expression>($4)
         );
 
         std::free($2);
@@ -217,10 +217,10 @@ variable_declaration
 
       BOOL IDENTIFIER ASSIGN expression
     {
-        $$ = new Compiler::VariableDeclaration(
+        $$ = new compiler::VariableDeclaration(
             "bool",
             $2,
-            std::unique_ptr<Compiler::Expression>($4)
+            std::unique_ptr<compiler::Expression>($4)
         );
 
         std::free($2);
@@ -243,10 +243,10 @@ expression
 
       expression PLUS expression
     {
-        $$ = new Compiler::BinaryExpression(
-            std::unique_ptr<Compiler::Expression>($1),
+        $$ = new compiler::BinaryExpression(
+            std::unique_ptr<compiler::Expression>($1),
             "+",
-            std::unique_ptr<Compiler::Expression>($3)
+            std::unique_ptr<compiler::Expression>($3)
         );
     }
 
@@ -254,10 +254,10 @@ expression
 
       expression MINUS expression
     {
-        $$ = new Compiler::BinaryExpression(
-            std::unique_ptr<Compiler::Expression>($1),
+        $$ = new compiler::BinaryExpression(
+            std::unique_ptr<compiler::Expression>($1),
             "-",
-            std::unique_ptr<Compiler::Expression>($3)
+            std::unique_ptr<compiler::Expression>($3)
         );
     }
 
@@ -265,10 +265,10 @@ expression
 
       expression STAR expression
     {
-        $$ = new Compiler::BinaryExpression(
-            std::unique_ptr<Compiler::Expression>($1),
+        $$ = new compiler::BinaryExpression(
+            std::unique_ptr<compiler::Expression>($1),
             "*",
-            std::unique_ptr<Compiler::Expression>($3)
+            std::unique_ptr<compiler::Expression>($3)
         );
     }
 
@@ -276,10 +276,10 @@ expression
 
       expression SLASH expression
     {
-        $$ = new Compiler::BinaryExpression(
-            std::unique_ptr<Compiler::Expression>($1),
+        $$ = new compiler::BinaryExpression(
+            std::unique_ptr<compiler::Expression>($1),
             "/",
-            std::unique_ptr<Compiler::Expression>($3)
+            std::unique_ptr<compiler::Expression>($3)
         );
     }
 
@@ -287,10 +287,10 @@ expression
 
       expression EQUALS_EQUALS expression
     {
-        $$ = new Compiler::BinaryExpression(
-            std::unique_ptr<Compiler::Expression>($1),
+        $$ = new compiler::BinaryExpression(
+            std::unique_ptr<compiler::Expression>($1),
             "==",
-            std::unique_ptr<Compiler::Expression>($3)
+            std::unique_ptr<compiler::Expression>($3)
         );
     }
 
@@ -298,10 +298,10 @@ expression
 
       expression LESS expression
     {
-        $$ = new Compiler::BinaryExpression(
-            std::unique_ptr<Compiler::Expression>($1),
+        $$ = new compiler::BinaryExpression(
+            std::unique_ptr<compiler::Expression>($1),
             "<",
-            std::unique_ptr<Compiler::Expression>($3)
+            std::unique_ptr<compiler::Expression>($3)
         );
     }
 
@@ -309,10 +309,10 @@ expression
 
       expression LESS_EQUALS expression
     {
-        $$ = new Compiler::BinaryExpression(
-            std::unique_ptr<Compiler::Expression>($1),
+        $$ = new compiler::BinaryExpression(
+            std::unique_ptr<compiler::Expression>($1),
             "<=",
-            std::unique_ptr<Compiler::Expression>($3)
+            std::unique_ptr<compiler::Expression>($3)
         );
     }
 
@@ -320,10 +320,10 @@ expression
 
       expression GREATER expression
     {
-        $$ = new Compiler::BinaryExpression(
-            std::unique_ptr<Compiler::Expression>($1),
+        $$ = new compiler::BinaryExpression(
+            std::unique_ptr<compiler::Expression>($1),
             ">",
-            std::unique_ptr<Compiler::Expression>($3)
+            std::unique_ptr<compiler::Expression>($3)
         );
     }
 
@@ -331,10 +331,10 @@ expression
 
       expression GREATER_EQUALS expression
     {
-        $$ = new Compiler::BinaryExpression(
-            std::unique_ptr<Compiler::Expression>($1),
+        $$ = new compiler::BinaryExpression(
+            std::unique_ptr<compiler::Expression>($1),
             ">=",
-            std::unique_ptr<Compiler::Expression>($3)
+            std::unique_ptr<compiler::Expression>($3)
         );
     }
 
@@ -355,7 +355,7 @@ primary_expression
     :
       NUMBER
     {
-        $$ = new Compiler::NumberExpression(
+        $$ = new compiler::NumberExpression(
             std::to_string($1)
         );
     }
@@ -364,7 +364,7 @@ primary_expression
 
       STRING
     {
-        $$ = new Compiler::StringExpression($1);
+        $$ = new compiler::StringExpression($1);
 
         std::free($1);
     }
@@ -373,7 +373,7 @@ primary_expression
 
       IDENTIFIER
     {
-        $$ = new Compiler::IdentifierExpression($1);
+        $$ = new compiler::IdentifierExpression($1);
 
         std::free($1);
     }

@@ -14,7 +14,11 @@ LLVM_Compiler_c++/
 │   ├── parser
 |      ├── parser.y       # Bison grammar rules
 │   ├── AST.h             # Abstract Syntax Tree interface
+│   ├── DataTypes.h
 ├── src/                  # Source files
+    └── Misc
+        ├── llvm_test.cpp
+        └── type_checker.cpp
 |   ├── AST.cpp           # Abstract Syntax Tree implementation
 │   ├── main.cpp          # Main compiler entry point
 ├── build.sh              # Build script

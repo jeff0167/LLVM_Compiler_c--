@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-namespace Compiler {
+namespace compiler {
 
 // ============================================================
 // Program
@@ -13,8 +13,8 @@ void Program::print(int indent) const
     printIndent(indent);
     std::cout << "Program\n";
 
-    for (const auto& statement : statements) {
-        statement->print(indent + 1);
+    for (const auto& node : nodes) {
+        node->print(indent + 1);
     }
 }
 
@@ -63,6 +63,11 @@ void NumberExpression::print(int indent) const
     printIndent(indent);
     std::cout << "NumberExpression: " << value << "\n";
 }
+
+// int NumberExpression::Visit() const
+// {
+//     // here we would define IR code gen
+// }
 
 
 // ============================================================

@@ -108,8 +108,8 @@ union YYSTYPE
     int number;
     char* string;
 
-    Compiler::Expression* expression;
-    Compiler::Statement* statement;
+    compiler::Expression* expression;
+    compiler::Statement* statement;
 
 #line 115 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/parser.hpp"
 

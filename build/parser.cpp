@@ -80,7 +80,7 @@ void yyerror(const char* message);
 /*extern int yydebug;*/   /* deep parser debuging 1*/
 
 
-std::unique_ptr<Compiler::Program> parsedProgram;
+std::unique_ptr<compiler::Program> parsedProgram;
 
 #line 86 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/parser.cpp"
 
@@ -1139,10 +1139,10 @@ yyreduce:
   case 2: /* input: statement END  */
 #line 134 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/parser/parser.y"
     {
-        parsedProgram = std::make_unique<Compiler::Program>();
+        parsedProgram = std::make_unique<compiler::Program>();
 
-        parsedProgram->addStatement(
-            std::unique_ptr<Compiler::Statement>((yyvsp[-1].statement))
+        parsedProgram->addNode(
+            std::unique_ptr<compiler::ASTNode>((yyvsp[-1].statement))
         );
     }
 #line 1149 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/parser.cpp"
@@ -1151,10 +1151,10 @@ yyreduce:
   case 3: /* input: statement SEMICOLON END  */
 #line 145 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/parser/parser.y"
     {
-        parsedProgram = std::make_unique<Compiler::Program>();
+        parsedProgram = std::make_unique<compiler::Program>();
 
-        parsedProgram->addStatement(
-            std::unique_ptr<Compiler::Statement>((yyvsp[-2].statement))
+        parsedProgram->addNode(
+            std::unique_ptr<compiler::ASTNode>((yyvsp[-2].statement))
         );
     }
 #line 1161 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/parser.cpp"
@@ -1163,8 +1163,8 @@ yyreduce:
   case 4: /* statement: expression  */
 #line 162 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/parser/parser.y"
     {
-        (yyval.statement) = new Compiler::ExpressionStatement(
-            std::unique_ptr<Compiler::Expression>((yyvsp[0].expression))
+        (yyval.statement) = new compiler::ExpressionStatement(
+            std::unique_ptr<compiler::Expression>((yyvsp[0].expression))
         );
     }
 #line 1171 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/parser.cpp"
@@ -1181,10 +1181,10 @@ yyreduce:
   case 6: /* variable_declaration: INT IDENTIFIER ASSIGN expression  */
 #line 180 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/parser/parser.y"
     {
-        (yyval.statement) = new Compiler::VariableDeclaration(
+        (yyval.statement) = new compiler::VariableDeclaration(
             "int",
             (yyvsp[-2].string),
-            std::unique_ptr<Compiler::Expression>((yyvsp[0].expression))
+            std::unique_ptr<compiler::Expression>((yyvsp[0].expression))
         );
 
         std::free((yyvsp[-2].string));
@@ -1195,10 +1195,10 @@ yyreduce:
   case 7: /* variable_declaration: FLOAT IDENTIFIER ASSIGN expression  */
 #line 193 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/parser/parser.y"
     {
-        (yyval.statement) = new Compiler::VariableDeclaration(
+        (yyval.statement) = new compiler::VariableDeclaration(
             "float",
             (yyvsp[-2].string),
-            std::unique_ptr<Compiler::Expression>((yyvsp[0].expression))
+            std::unique_ptr<compiler::Expression>((yyvsp[0].expression))
         );
 
         std::free((yyvsp[-2].string));
@@ -1209,10 +1209,10 @@ yyreduce:
   case 8: /* variable_declaration: CHAR IDENTIFIER ASSIGN expression  */
 #line 206 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/parser/parser.y"
     {
-        (yyval.statement) = new Compiler::VariableDeclaration(
+        (yyval.statement) = new compiler::VariableDeclaration(
             "char",
             (yyvsp[-2].string),
-            std::unique_ptr<Compiler::Expression>((yyvsp[0].expression))
+            std::unique_ptr<compiler::Expression>((yyvsp[0].expression))
         );
 
         std::free((yyvsp[-2].string));
@@ -1223,10 +1223,10 @@ yyreduce:
   case 9: /* variable_declaration: BOOL IDENTIFIER ASSIGN expression  */
 #line 219 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/parser/parser.y"
     {
-        (yyval.statement) = new Compiler::VariableDeclaration(
+        (yyval.statement) = new compiler::VariableDeclaration(
             "bool",
             (yyvsp[-2].string),
-            std::unique_ptr<Compiler::Expression>((yyvsp[0].expression))
+            std::unique_ptr<compiler::Expression>((yyvsp[0].expression))
         );
 
         std::free((yyvsp[-2].string));
@@ -1245,10 +1245,10 @@ yyreduce:
   case 11: /* expression: expression PLUS expression  */
 #line 245 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/parser/parser.y"
     {
-        (yyval.expression) = new Compiler::BinaryExpression(
-            std::unique_ptr<Compiler::Expression>((yyvsp[-2].expression)),
+        (yyval.expression) = new compiler::BinaryExpression(
+            std::unique_ptr<compiler::Expression>((yyvsp[-2].expression)),
             "+",
-            std::unique_ptr<Compiler::Expression>((yyvsp[0].expression))
+            std::unique_ptr<compiler::Expression>((yyvsp[0].expression))
         );
     }
 #line 1255 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/parser.cpp"
@@ -1257,10 +1257,10 @@ yyreduce:
   case 12: /* expression: expression MINUS expression  */
 #line 256 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/parser/parser.y"
     {
-        (yyval.expression) = new Compiler::BinaryExpression(
-            std::unique_ptr<Compiler::Expression>((yyvsp[-2].expression)),
+        (yyval.expression) = new compiler::BinaryExpression(
+            std::unique_ptr<compiler::Expression>((yyvsp[-2].expression)),
             "-",
-            std::unique_ptr<Compiler::Expression>((yyvsp[0].expression))
+            std::unique_ptr<compiler::Expression>((yyvsp[0].expression))
         );
     }
 #line 1267 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/parser.cpp"
@@ -1269,10 +1269,10 @@ yyreduce:
   case 13: /* expression: expression STAR expression  */
 #line 267 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/parser/parser.y"
     {
-        (yyval.expression) = new Compiler::BinaryExpression(
-            std::unique_ptr<Compiler::Expression>((yyvsp[-2].expression)),
+        (yyval.expression) = new compiler::BinaryExpression(
+            std::unique_ptr<compiler::Expression>((yyvsp[-2].expression)),
             "*",
-            std::unique_ptr<Compiler::Expression>((yyvsp[0].expression))
+            std::unique_ptr<compiler::Expression>((yyvsp[0].expression))
         );
     }
 #line 1279 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/parser.cpp"
@@ -1281,10 +1281,10 @@ yyreduce:
   case 14: /* expression: expression SLASH expression  */
 #line 278 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/parser/parser.y"
     {
-        (yyval.expression) = new Compiler::BinaryExpression(
-            std::unique_ptr<Compiler::Expression>((yyvsp[-2].expression)),
+        (yyval.expression) = new compiler::BinaryExpression(
+            std::unique_ptr<compiler::Expression>((yyvsp[-2].expression)),
             "/",
-            std::unique_ptr<Compiler::Expression>((yyvsp[0].expression))
+            std::unique_ptr<compiler::Expression>((yyvsp[0].expression))
         );
     }
 #line 1291 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/parser.cpp"
@@ -1293,10 +1293,10 @@ yyreduce:
   case 15: /* expression: expression EQUALS_EQUALS expression  */
 #line 289 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/parser/parser.y"
     {
-        (yyval.expression) = new Compiler::BinaryExpression(
-            std::unique_ptr<Compiler::Expression>((yyvsp[-2].expression)),
+        (yyval.expression) = new compiler::BinaryExpression(
+            std::unique_ptr<compiler::Expression>((yyvsp[-2].expression)),
             "==",
-            std::unique_ptr<Compiler::Expression>((yyvsp[0].expression))
+            std::unique_ptr<compiler::Expression>((yyvsp[0].expression))
         );
     }
 #line 1303 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/parser.cpp"
@@ -1305,10 +1305,10 @@ yyreduce:
   case 16: /* expression: expression LESS expression  */
 #line 300 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/parser/parser.y"
     {
-        (yyval.expression) = new Compiler::BinaryExpression(
-            std::unique_ptr<Compiler::Expression>((yyvsp[-2].expression)),
+        (yyval.expression) = new compiler::BinaryExpression(
+            std::unique_ptr<compiler::Expression>((yyvsp[-2].expression)),
             "<",
-            std::unique_ptr<Compiler::Expression>((yyvsp[0].expression))
+            std::unique_ptr<compiler::Expression>((yyvsp[0].expression))
         );
     }
 #line 1315 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/parser.cpp"
@@ -1317,10 +1317,10 @@ yyreduce:
   case 17: /* expression: expression LESS_EQUALS expression  */
 #line 311 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/parser/parser.y"
     {
-        (yyval.expression) = new Compiler::BinaryExpression(
-            std::unique_ptr<Compiler::Expression>((yyvsp[-2].expression)),
+        (yyval.expression) = new compiler::BinaryExpression(
+            std::unique_ptr<compiler::Expression>((yyvsp[-2].expression)),
             "<=",
-            std::unique_ptr<Compiler::Expression>((yyvsp[0].expression))
+            std::unique_ptr<compiler::Expression>((yyvsp[0].expression))
         );
     }
 #line 1327 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/parser.cpp"
@@ -1329,10 +1329,10 @@ yyreduce:
   case 18: /* expression: expression GREATER expression  */
 #line 322 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/parser/parser.y"
     {
-        (yyval.expression) = new Compiler::BinaryExpression(
-            std::unique_ptr<Compiler::Expression>((yyvsp[-2].expression)),
+        (yyval.expression) = new compiler::BinaryExpression(
+            std::unique_ptr<compiler::Expression>((yyvsp[-2].expression)),
             ">",
-            std::unique_ptr<Compiler::Expression>((yyvsp[0].expression))
+            std::unique_ptr<compiler::Expression>((yyvsp[0].expression))
         );
     }
 #line 1339 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/parser.cpp"
@@ -1341,10 +1341,10 @@ yyreduce:
   case 19: /* expression: expression GREATER_EQUALS expression  */
 #line 333 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/parser/parser.y"
     {
-        (yyval.expression) = new Compiler::BinaryExpression(
-            std::unique_ptr<Compiler::Expression>((yyvsp[-2].expression)),
+        (yyval.expression) = new compiler::BinaryExpression(
+            std::unique_ptr<compiler::Expression>((yyvsp[-2].expression)),
             ">=",
-            std::unique_ptr<Compiler::Expression>((yyvsp[0].expression))
+            std::unique_ptr<compiler::Expression>((yyvsp[0].expression))
         );
     }
 #line 1351 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/parser.cpp"
@@ -1361,7 +1361,7 @@ yyreduce:
   case 21: /* primary_expression: NUMBER  */
 #line 357 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/parser/parser.y"
     {
-        (yyval.expression) = new Compiler::NumberExpression(
+        (yyval.expression) = new compiler::NumberExpression(
             std::to_string((yyvsp[0].number))
         );
     }
@@ -1371,7 +1371,7 @@ yyreduce:
   case 22: /* primary_expression: STRING  */
 #line 366 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/parser/parser.y"
     {
-        (yyval.expression) = new Compiler::StringExpression((yyvsp[0].string));
+        (yyval.expression) = new compiler::StringExpression((yyvsp[0].string));
 
         std::free((yyvsp[0].string));
     }
@@ -1381,7 +1381,7 @@ yyreduce:
   case 23: /* primary_expression: IDENTIFIER  */
 #line 375 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/parser/parser.y"
     {
-        (yyval.expression) = new Compiler::IdentifierExpression((yyvsp[0].string));
+        (yyval.expression) = new compiler::IdentifierExpression((yyvsp[0].string));
 
         std::free((yyvsp[0].string));
     }
