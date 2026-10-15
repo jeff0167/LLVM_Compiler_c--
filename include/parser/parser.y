@@ -149,8 +149,29 @@ input
             std::unique_ptr<compiler::ASTNode>($1)
         );
     }
-    ;
 
+    |
+
+     expression END
+    {
+        parsedProgram = std::make_unique<compiler::Program>();
+
+        parsedProgram->addNode(
+            std::unique_ptr<compiler::ASTNode>($1)
+        );
+    }
+
+    |
+
+      expression SEMICOLON END
+    {
+        parsedProgram = std::make_unique<compiler::Program>();
+
+        parsedProgram->addNode(
+            std::unique_ptr<compiler::ASTNode>($1)
+        );
+    }
+    ;
 
 /* ============================================================
    Statements
@@ -158,15 +179,6 @@ input
 
 statement
     :
-      expression
-    {
-        $$ = new compiler::ExpressionStatement(
-            std::unique_ptr<compiler::Expression>($1)
-        );
-    }
-
-    |
-
       variable_declaration
     {
         $$ = $1;

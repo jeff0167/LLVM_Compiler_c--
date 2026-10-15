@@ -9,15 +9,19 @@ namespace compiler
         virtual ~DataType() = default;
     };
 
-    class IntType : DataType
+    class IntType : public DataType
     {
     public:
-        virtual ~IntType() = default;
+        IntType() = default;
+     
+        ~IntType() = default;
     };
 
-    class BoolType : DataType
+    class BoolType : public DataType
     {
     public:
-        virtual ~BoolType() = default;
+        BoolType() = default;
+
+        ~BoolType() = default;
     };
 }

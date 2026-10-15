@@ -480,16 +480,16 @@ union yyalloc
 /* YYFINAL -- State number of the termination state.  */
 #define YYFINAL  19
 /* YYLAST -- Last index in YYTABLE.  */
-#define YYLAST   72
+#define YYLAST   88
 
 /* YYNTOKENS -- Number of terminals.  */
 #define YYNTOKENS  37
 /* YYNNTS -- Number of nonterminals.  */
 #define YYNNTS  6
 /* YYNRULES -- Number of rules.  */
-#define YYNRULES  23
+#define YYNRULES  24
 /* YYNSTATES -- Number of states.  */
-#define YYNSTATES  50
+#define YYNSTATES  53
 
 /* YYMAXUTOK -- Last valid token kind.  */
 #define YYMAXUTOK   291
@@ -542,9 +542,9 @@ static const yytype_int8 yytranslate[] =
 /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_int16 yyrline[] =
 {
-       0,   133,   133,   144,   161,   170,   179,   192,   205,   218,
-     237,   244,   255,   266,   277,   288,   299,   310,   321,   332,
-     343,   356,   365,   374
+       0,   133,   133,   144,   155,   166,   182,   191,   204,   217,
+     230,   249,   256,   267,   278,   289,   300,   311,   322,   333,
+     344,   355,   368,   377,   386
 };
 #endif
 
@@ -577,7 +577,7 @@ yysymbol_name (yysymbol_kind_t yysymbol)
 }
 #endif
 
-#define YYPACT_NINF (-9)
+#define YYPACT_NINF (-13)
 
 #define yypact_value_is_default(Yyn) \
   ((Yyn) == YYPACT_NINF)
@@ -591,11 +591,12 @@ yysymbol_name (yysymbol_kind_t yysymbol)
    STATE-NUM.  */
 static const yytype_int8 yypact[] =
 {
-      -2,    -9,    -9,    -9,     2,    28,    29,    30,     6,    48,
-      10,    -9,    31,    -9,    46,    51,    52,    53,    17,    -9,
-      13,    -9,     6,     6,     6,     6,     6,     6,     6,     6,
-       6,     6,     6,     6,     6,    -9,    -9,    -1,    -1,    -9,
-      -9,    45,    49,    49,    49,    49,    31,    31,    31,    31
+       0,   -13,   -13,   -13,     4,    31,    32,    34,     8,    23,
+      -2,   -13,    19,   -13,    25,    27,    46,    48,    36,   -13,
+      33,   -13,     8,     8,     8,     8,     8,     8,     8,     8,
+       8,    43,   -13,     8,     8,     8,     8,   -13,   -13,   -12,
+     -12,   -13,   -13,    64,    40,    40,    40,    40,   -13,    50,
+      50,    50,    50
 };
 
 /* YYDEFACT[STATE-NUM] -- Default reduction number in state STATE-NUM.
@@ -603,17 +604,18 @@ static const yytype_int8 yypact[] =
    means the default is an error.  */
 static const yytype_int8 yydefact[] =
 {
-       0,    21,    23,    22,     0,     0,     0,     0,     0,     0,
-       0,     5,     4,    10,     0,     0,     0,     0,     0,     1,
+       0,    22,    24,    23,     0,     0,     0,     0,     0,     0,
+       0,     6,     0,    11,     0,     0,     0,     0,     0,     1,
        0,     2,     0,     0,     0,     0,     0,     0,     0,     0,
-       0,     0,     0,     0,     0,    20,     3,    11,    12,    13,
-      14,    15,    16,    17,    18,    19,     6,     7,     8,     9
+       0,     0,     4,     0,     0,     0,     0,    21,     3,    12,
+      13,    14,    15,    16,    17,    18,    19,    20,     5,     7,
+       8,     9,    10
 };
 
 /* YYPGOTO[NTERM-NUM].  */
 static const yytype_int8 yypgoto[] =
 {
-      -9,    -9,    -9,    -9,    -8,    -9
+     -13,   -13,   -13,   -13,    -8,   -13
 };
 
 /* YYDEFGOTO[NTERM-NUM].  */
@@ -627,26 +629,28 @@ static const yytype_int8 yydefgoto[] =
    number is the opposite.  If YYTABLE_NINF, syntax error.  */
 static const yytype_int8 yytable[] =
 {
-      18,     1,     2,     3,     4,     5,    14,     6,     7,     1,
-       2,     3,    24,    25,    37,    38,    39,    40,    41,    42,
-      43,    44,    45,    46,    47,    48,    49,     8,    22,    23,
-      24,    25,    15,    16,    17,     8,    20,    26,    27,    28,
-      29,    30,    22,    23,    24,    25,    21,    35,    19,    36,
-       0,    26,    27,    28,    29,    30,    22,    23,    24,    25,
-      22,    23,    24,    25,     0,    31,    27,    28,    29,    30,
-      32,    33,    34
+      18,    24,    25,     1,     2,     3,     4,     5,    14,     6,
+       7,     1,     2,     3,    39,    40,    41,    42,    43,    44,
+      45,    46,    47,    19,    20,    49,    50,    51,    52,     8,
+      22,    23,    24,    25,    21,    15,    16,     8,    17,    26,
+      27,    28,    29,    30,    33,    31,    34,    22,    23,    24,
+      25,    22,    23,    24,    25,    32,    26,    27,    28,    29,
+      30,    22,    23,    24,    25,    35,    37,    36,     0,    38,
+      26,    27,    28,    29,    30,    22,    23,    24,    25,    48,
+       0,     0,     0,     0,     0,    27,    28,    29,    30
 };
 
 static const yytype_int8 yycheck[] =
 {
-       8,     3,     4,     5,     6,     7,     4,     9,    10,     3,
-       4,     5,    13,    14,    22,    23,    24,    25,    26,    27,
-      28,    29,    30,    31,    32,    33,    34,    29,    11,    12,
-      13,    14,     4,     4,     4,    29,    26,    20,    21,    22,
-      23,    24,    11,    12,    13,    14,    36,    30,     0,    36,
-      -1,    20,    21,    22,    23,    24,    11,    12,    13,    14,
-      11,    12,    13,    14,    -1,    19,    21,    22,    23,    24,
-      19,    19,    19
+       8,    13,    14,     3,     4,     5,     6,     7,     4,     9,
+      10,     3,     4,     5,    22,    23,    24,    25,    26,    27,
+      28,    29,    30,     0,    26,    33,    34,    35,    36,    29,
+      11,    12,    13,    14,    36,     4,     4,    29,     4,    20,
+      21,    22,    23,    24,    19,    26,    19,    11,    12,    13,
+      14,    11,    12,    13,    14,    36,    20,    21,    22,    23,
+      24,    11,    12,    13,    14,    19,    30,    19,    -1,    36,
+      20,    21,    22,    23,    24,    11,    12,    13,    14,    36,
+      -1,    -1,    -1,    -1,    -1,    21,    22,    23,    24
 };
 
 /* YYSTOS[STATE-NUM] -- The symbol kind of the accessing symbol of
@@ -656,24 +660,25 @@ static const yytype_int8 yystos[] =
        0,     3,     4,     5,     6,     7,     9,    10,    29,    38,
       39,    40,    41,    42,     4,     4,     4,     4,    41,     0,
       26,    36,    11,    12,    13,    14,    20,    21,    22,    23,
-      24,    19,    19,    19,    19,    30,    36,    41,    41,    41,
-      41,    41,    41,    41,    41,    41,    41,    41,    41,    41
+      24,    26,    36,    19,    19,    19,    19,    30,    36,    41,
+      41,    41,    41,    41,    41,    41,    41,    41,    36,    41,
+      41,    41,    41
 };
 
 /* YYR1[RULE-NUM] -- Symbol kind of the left-hand side of rule RULE-NUM.  */
 static const yytype_int8 yyr1[] =
 {
-       0,    37,    38,    38,    39,    39,    40,    40,    40,    40,
-      41,    41,    41,    41,    41,    41,    41,    41,    41,    41,
-      41,    42,    42,    42
+       0,    37,    38,    38,    38,    38,    39,    40,    40,    40,
+      40,    41,    41,    41,    41,    41,    41,    41,    41,    41,
+      41,    41,    42,    42,    42
 };
 
 /* YYR2[RULE-NUM] -- Number of symbols on the right-hand side of rule RULE-NUM.  */
 static const yytype_int8 yyr2[] =
 {
-       0,     2,     2,     3,     1,     1,     4,     4,     4,     4,
-       1,     3,     3,     3,     3,     3,     3,     3,     3,     3,
-       3,     1,     1,     1
+       0,     2,     2,     3,     2,     3,     1,     4,     4,     4,
+       4,     1,     3,     3,     3,     3,     3,     3,     3,     3,
+       3,     3,     1,     1,     1
 };
 
 
@@ -1145,7 +1150,7 @@ yyreduce:
             std::unique_ptr<compiler::ASTNode>((yyvsp[-1].statement))
         );
     }
-#line 1149 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/parser.cpp"
+#line 1154 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/parser.cpp"
     break;
 
   case 3: /* input: statement SEMICOLON END  */
@@ -1157,29 +1162,43 @@ yyreduce:
             std::unique_ptr<compiler::ASTNode>((yyvsp[-2].statement))
         );
     }
-#line 1161 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/parser.cpp"
+#line 1166 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/parser.cpp"
     break;
 
-  case 4: /* statement: expression  */
-#line 162 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/parser/parser.y"
+  case 4: /* input: expression END  */
+#line 156 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/parser/parser.y"
     {
-        (yyval.statement) = new compiler::ExpressionStatement(
-            std::unique_ptr<compiler::Expression>((yyvsp[0].expression))
+        parsedProgram = std::make_unique<compiler::Program>();
+
+        parsedProgram->addNode(
+            std::unique_ptr<compiler::ASTNode>((yyvsp[-1].expression))
         );
     }
-#line 1171 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/parser.cpp"
+#line 1178 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/parser.cpp"
     break;
 
-  case 5: /* statement: variable_declaration  */
-#line 171 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/parser/parser.y"
+  case 5: /* input: expression SEMICOLON END  */
+#line 167 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/parser/parser.y"
+    {
+        parsedProgram = std::make_unique<compiler::Program>();
+
+        parsedProgram->addNode(
+            std::unique_ptr<compiler::ASTNode>((yyvsp[-2].expression))
+        );
+    }
+#line 1190 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/parser.cpp"
+    break;
+
+  case 6: /* statement: variable_declaration  */
+#line 183 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/parser/parser.y"
     {
         (yyval.statement) = (yyvsp[0].statement);
     }
-#line 1179 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/parser.cpp"
+#line 1198 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/parser.cpp"
     break;
 
-  case 6: /* variable_declaration: INT IDENTIFIER ASSIGN expression  */
-#line 180 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/parser/parser.y"
+  case 7: /* variable_declaration: INT IDENTIFIER ASSIGN expression  */
+#line 192 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/parser/parser.y"
     {
         (yyval.statement) = new compiler::VariableDeclaration(
             "int",
@@ -1189,11 +1208,11 @@ yyreduce:
 
         std::free((yyvsp[-2].string));
     }
-#line 1193 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/parser.cpp"
+#line 1212 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/parser.cpp"
     break;
 
-  case 7: /* variable_declaration: FLOAT IDENTIFIER ASSIGN expression  */
-#line 193 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/parser/parser.y"
+  case 8: /* variable_declaration: FLOAT IDENTIFIER ASSIGN expression  */
+#line 205 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/parser/parser.y"
     {
         (yyval.statement) = new compiler::VariableDeclaration(
             "float",
@@ -1203,11 +1222,11 @@ yyreduce:
 
         std::free((yyvsp[-2].string));
     }
-#line 1207 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/parser.cpp"
+#line 1226 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/parser.cpp"
     break;
 
-  case 8: /* variable_declaration: CHAR IDENTIFIER ASSIGN expression  */
-#line 206 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/parser/parser.y"
+  case 9: /* variable_declaration: CHAR IDENTIFIER ASSIGN expression  */
+#line 218 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/parser/parser.y"
     {
         (yyval.statement) = new compiler::VariableDeclaration(
             "char",
@@ -1217,11 +1236,11 @@ yyreduce:
 
         std::free((yyvsp[-2].string));
     }
-#line 1221 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/parser.cpp"
+#line 1240 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/parser.cpp"
     break;
 
-  case 9: /* variable_declaration: BOOL IDENTIFIER ASSIGN expression  */
-#line 219 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/parser/parser.y"
+  case 10: /* variable_declaration: BOOL IDENTIFIER ASSIGN expression  */
+#line 231 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/parser/parser.y"
     {
         (yyval.statement) = new compiler::VariableDeclaration(
             "bool",
@@ -1231,19 +1250,19 @@ yyreduce:
 
         std::free((yyvsp[-2].string));
     }
-#line 1235 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/parser.cpp"
+#line 1254 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/parser.cpp"
     break;
 
-  case 10: /* expression: primary_expression  */
-#line 238 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/parser/parser.y"
+  case 11: /* expression: primary_expression  */
+#line 250 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/parser/parser.y"
     {
         (yyval.expression) = (yyvsp[0].expression);
     }
-#line 1243 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/parser.cpp"
+#line 1262 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/parser.cpp"
     break;
 
-  case 11: /* expression: expression PLUS expression  */
-#line 245 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/parser/parser.y"
+  case 12: /* expression: expression PLUS expression  */
+#line 257 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/parser/parser.y"
     {
         (yyval.expression) = new compiler::BinaryExpression(
             std::unique_ptr<compiler::Expression>((yyvsp[-2].expression)),
@@ -1251,11 +1270,11 @@ yyreduce:
             std::unique_ptr<compiler::Expression>((yyvsp[0].expression))
         );
     }
-#line 1255 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/parser.cpp"
+#line 1274 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/parser.cpp"
     break;
 
-  case 12: /* expression: expression MINUS expression  */
-#line 256 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/parser/parser.y"
+  case 13: /* expression: expression MINUS expression  */
+#line 268 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/parser/parser.y"
     {
         (yyval.expression) = new compiler::BinaryExpression(
             std::unique_ptr<compiler::Expression>((yyvsp[-2].expression)),
@@ -1263,11 +1282,11 @@ yyreduce:
             std::unique_ptr<compiler::Expression>((yyvsp[0].expression))
         );
     }
-#line 1267 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/parser.cpp"
+#line 1286 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/parser.cpp"
     break;
 
-  case 13: /* expression: expression STAR expression  */
-#line 267 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/parser/parser.y"
+  case 14: /* expression: expression STAR expression  */
+#line 279 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/parser/parser.y"
     {
         (yyval.expression) = new compiler::BinaryExpression(
             std::unique_ptr<compiler::Expression>((yyvsp[-2].expression)),
@@ -1275,11 +1294,11 @@ yyreduce:
             std::unique_ptr<compiler::Expression>((yyvsp[0].expression))
         );
     }
-#line 1279 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/parser.cpp"
+#line 1298 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/parser.cpp"
     break;
 
-  case 14: /* expression: expression SLASH expression  */
-#line 278 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/parser/parser.y"
+  case 15: /* expression: expression SLASH expression  */
+#line 290 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/parser/parser.y"
     {
         (yyval.expression) = new compiler::BinaryExpression(
             std::unique_ptr<compiler::Expression>((yyvsp[-2].expression)),
@@ -1287,11 +1306,11 @@ yyreduce:
             std::unique_ptr<compiler::Expression>((yyvsp[0].expression))
         );
     }
-#line 1291 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/parser.cpp"
+#line 1310 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/parser.cpp"
     break;
 
-  case 15: /* expression: expression EQUALS_EQUALS expression  */
-#line 289 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/parser/parser.y"
+  case 16: /* expression: expression EQUALS_EQUALS expression  */
+#line 301 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/parser/parser.y"
     {
         (yyval.expression) = new compiler::BinaryExpression(
             std::unique_ptr<compiler::Expression>((yyvsp[-2].expression)),
@@ -1299,11 +1318,11 @@ yyreduce:
             std::unique_ptr<compiler::Expression>((yyvsp[0].expression))
         );
     }
-#line 1303 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/parser.cpp"
+#line 1322 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/parser.cpp"
     break;
 
-  case 16: /* expression: expression LESS expression  */
-#line 300 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/parser/parser.y"
+  case 17: /* expression: expression LESS expression  */
+#line 312 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/parser/parser.y"
     {
         (yyval.expression) = new compiler::BinaryExpression(
             std::unique_ptr<compiler::Expression>((yyvsp[-2].expression)),
@@ -1311,11 +1330,11 @@ yyreduce:
             std::unique_ptr<compiler::Expression>((yyvsp[0].expression))
         );
     }
-#line 1315 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/parser.cpp"
+#line 1334 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/parser.cpp"
     break;
 
-  case 17: /* expression: expression LESS_EQUALS expression  */
-#line 311 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/parser/parser.y"
+  case 18: /* expression: expression LESS_EQUALS expression  */
+#line 323 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/parser/parser.y"
     {
         (yyval.expression) = new compiler::BinaryExpression(
             std::unique_ptr<compiler::Expression>((yyvsp[-2].expression)),
@@ -1323,11 +1342,11 @@ yyreduce:
             std::unique_ptr<compiler::Expression>((yyvsp[0].expression))
         );
     }
-#line 1327 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/parser.cpp"
+#line 1346 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/parser.cpp"
     break;
 
-  case 18: /* expression: expression GREATER expression  */
-#line 322 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/parser/parser.y"
+  case 19: /* expression: expression GREATER expression  */
+#line 334 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/parser/parser.y"
     {
         (yyval.expression) = new compiler::BinaryExpression(
             std::unique_ptr<compiler::Expression>((yyvsp[-2].expression)),
@@ -1335,11 +1354,11 @@ yyreduce:
             std::unique_ptr<compiler::Expression>((yyvsp[0].expression))
         );
     }
-#line 1339 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/parser.cpp"
+#line 1358 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/parser.cpp"
     break;
 
-  case 19: /* expression: expression GREATER_EQUALS expression  */
-#line 333 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/parser/parser.y"
+  case 20: /* expression: expression GREATER_EQUALS expression  */
+#line 345 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/parser/parser.y"
     {
         (yyval.expression) = new compiler::BinaryExpression(
             std::unique_ptr<compiler::Expression>((yyvsp[-2].expression)),
@@ -1347,49 +1366,49 @@ yyreduce:
             std::unique_ptr<compiler::Expression>((yyvsp[0].expression))
         );
     }
-#line 1351 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/parser.cpp"
+#line 1370 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/parser.cpp"
     break;
 
-  case 20: /* expression: LPAREN expression RPAREN  */
-#line 344 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/parser/parser.y"
+  case 21: /* expression: LPAREN expression RPAREN  */
+#line 356 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/parser/parser.y"
     {
         (yyval.expression) = (yyvsp[-1].expression);
     }
-#line 1359 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/parser.cpp"
+#line 1378 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/parser.cpp"
     break;
 
-  case 21: /* primary_expression: NUMBER  */
-#line 357 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/parser/parser.y"
+  case 22: /* primary_expression: NUMBER  */
+#line 369 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/parser/parser.y"
     {
         (yyval.expression) = new compiler::NumberExpression(
             std::to_string((yyvsp[0].number))
         );
     }
-#line 1369 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/parser.cpp"
+#line 1388 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/parser.cpp"
     break;
 
-  case 22: /* primary_expression: STRING  */
-#line 366 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/parser/parser.y"
+  case 23: /* primary_expression: STRING  */
+#line 378 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/parser/parser.y"
     {
         (yyval.expression) = new compiler::StringExpression((yyvsp[0].string));
 
         std::free((yyvsp[0].string));
     }
-#line 1379 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/parser.cpp"
+#line 1398 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/parser.cpp"
     break;
 
-  case 23: /* primary_expression: IDENTIFIER  */
-#line 375 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/parser/parser.y"
+  case 24: /* primary_expression: IDENTIFIER  */
+#line 387 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/parser/parser.y"
     {
         (yyval.expression) = new compiler::IdentifierExpression((yyvsp[0].string));
 
         std::free((yyvsp[0].string));
     }
-#line 1389 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/parser.cpp"
+#line 1408 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/parser.cpp"
     break;
 
 
-#line 1393 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/parser.cpp"
+#line 1412 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/build/parser.cpp"
 
       default: break;
     }
@@ -1582,7 +1601,7 @@ yyreturnlab:
   return yyresult;
 }
 
-#line 383 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/parser/parser.y"
+#line 395 "/home/socrates/Documents/resources/repository/LLVM_Compiler_c++/include/parser/parser.y"
 
 
 

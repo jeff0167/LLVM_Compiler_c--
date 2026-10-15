@@ -145,26 +145,11 @@ int VisitProgram(std::unique_ptr<compiler::Program> parsedProgram)
     for (const auto &item : parsedProgram->nodes)
     {
         std::cout<<"generate IR code";
-        //item->visit(this);
-        // if(item->type == Compiler::ASTNode::Type::ExpressionStatement)
-        //     Generate_IR_Code(item->expression);
+        //item->visit(this); // we still need to implement the visit pattern for IR generation
     }
 
     int a = 1;
     return a;
 }
 
-// int Generate_IR_Code2(std::unique_ptr<Compiler::BinaryExpression> expr)
-// {
 
-//     // std::cout<<"generate IR code";
-//     // expr->print();
-//     // if(expr->left != nullptr)
-//     //     Generate_IR_Code(expr->left);
-//     // if(expr->right != nullptr)
-//     //     Generate_IR_Code(expr->right);    
-    
-
-//     // int a = 1;
-//     // return a;
-// }

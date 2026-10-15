@@ -58,7 +58,6 @@
 "==" { return EQUALS_EQUALS; }
 "<=" { return LESS_EQUALS; }
 ">=" { return GREATER_EQUALS; }
-"->" { return ARROW; }
 
 "+" {
     std::cout << "LEXER: PLUS\n";

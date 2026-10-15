@@ -18,20 +18,6 @@ void Program::print(int indent) const
     }
 }
 
-
-// ============================================================
-// Expression statement
-// ============================================================
-
-void ExpressionStatement::print(int indent) const
-{
-    printIndent(indent);
-    std::cout << "ExpressionStatement\n";
-
-    expression->print(indent + 1);
-}
-
-
 // ============================================================
 // Variable declaration
 // ============================================================

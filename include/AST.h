@@ -21,8 +21,12 @@ class ASTNode
 
         virtual void print(int indent = 0) const = 0;
 
-        compiler::DataType Type;
-        void setType(compiler::DataType t) { Type = t; }
+         std::unique_ptr<compiler::DataType> Type;
+
+        void setType(std::unique_ptr<compiler::DataType> type)
+        {
+            Type = std::move(type);
+        }
 
         //virtual int Visit() const = 0; // Visitor pattern
 
@@ -152,27 +156,6 @@ class Program : public ASTNode
         void print(int indent = 0) const override;
 
         std::vector<std::unique_ptr<ASTNode>> nodes;
-    private:
-};
-
-
-// ============================================================
-// Expression statement
-// ============================================================
-
-class ExpressionStatement : public Statement
-{
-    public:
-        explicit ExpressionStatement(
-            std::unique_ptr<Expression> expression
-        )
-            : expression(std::move(expression))
-        {
-        }
-
-        void print(int indent = 0) const override;
-
-        std::unique_ptr<Expression> expression;
     private:
 };
 
